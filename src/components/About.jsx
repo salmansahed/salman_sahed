@@ -7,7 +7,10 @@ import aboutImg from "../assets/images/salman_sahed_carton.png";
 
 const About = () => {
   return (
-    <div className="max-w-6xl mx-auto py-6 sm:py-10 md:py-24 px-3 scroll-mt-0" id="about">
+    <div
+      className="max-w-6xl mx-auto py-6 sm:py-10 md:py-24 px-3 scroll-mt-0"
+      id="about"
+    >
       <div className="text-center mb-10">
         <h1 className="text-4xl font-semibold text-gray-100">About</h1>
         <p className="text-gray-300">My Introduction</p>
@@ -48,7 +51,12 @@ const About = () => {
               provide seamless user experiences. My journey involves
               transitioning from WordPress to advanced JavaScript frameworks
               like React and Next.js, driven by a commitment to clean code and
-              innovative design.
+              innovative design. Beyond the screen, I am an electronics
+              enthusiast who loves experimenting with DIY hardware projects.
+              Whether I’m building a custom solar setup or solving complex code
+              logic, I thrive on the challenge of creating things from scratch.
+              I believe in constant learning and enjoy sharing knowledge with
+              the developer community.
             </p>
             <Button className="bg-white/10 border border-white/20 py-6 px-6 text-base rounded-lg shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
               Download Resume

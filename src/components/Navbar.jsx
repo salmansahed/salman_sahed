@@ -50,7 +50,7 @@ const Navbar = () => {
       <div className="mx-auto my-4 flex max-w-6xl items-center justify-between rounded-full border border-white/20 bg-white/10 py-4 px-6 text-white/80 backdrop-blur-md shadow-2xl shadow-white/10">
         <div>
           <h1 className="text-xl font-semibold uppercase text-white">
-            Salman Sahed
+            <span className="text-green-400">{"<"}</span> SALMAN <span className="text-red-400">{"/>"}</span>
           </h1>
         </div>
 

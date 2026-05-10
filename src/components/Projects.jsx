@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 
 const Projects = () => {
@@ -131,7 +131,7 @@ const Projects = () => {
               </p>
 
               {/* Tech Stack Chips */}
-              <div className="flex flex-wrap gap-2 mb-6">
+              {/* <div className="flex flex-wrap gap-2 mb-6">
                 {project.techStack.map((tech, index) => (
                   <span
                     key={index}
@@ -140,6 +140,21 @@ const Projects = () => {
                     {tech}
                   </span>
                 ))}
+              </div> */}
+
+              {/* Details Button */}
+              <div className="mb-3">
+                <Link
+                  target="_blank"
+                  href={`project-details/${project.title}`}
+                  className="inline-block"
+                >
+                  <button className="cursor-pointer group/btn flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 text-white text-sm py-1.5 px-5 rounded-full transition-all duration-300 ease-in-out shadow-lg shadow-black/10">
+                    <span>View More Details</span>
+
+                    <FaArrowRight className="text-xs transition-transform duration-300 group-hover/btn:translate-x-1.5" />
+                  </button>
+                </Link>
               </div>
 
               {/* Action Buttons */}

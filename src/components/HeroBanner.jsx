@@ -15,7 +15,9 @@ const HeroBanner = () => {
     >
       <div className="gap-4 flex flex-col items-center md:items-start mt-6 md:mt-0">
         <h2 className="text-2xl text-gray-100">Hey, I&apos;m</h2>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-100">Salman Sahed</h1>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-100">
+          Salman Sahed
+        </h1>
         <h2 className="text-xl sm:text-2xl text-gray-100">
           <TypeAnimation
             sequence={[
@@ -40,30 +42,35 @@ const HeroBanner = () => {
           🚀 Transforming complex ideas into high-performance digital solutions
           | Specialized in MERN Stack & Next.js 💻
         </p>
-        <Link href={"/#contacts"}>
-          <Button
-            className={
-              "bg-white/10 border border-white/20 px-6 py-5 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all"
-            }
-          >
-            Say Hello
+        <div className="flex items-center gap-6">
+          <Link href={"/#contacts"}>
+            <Button
+              className={
+                "bg-white/10 border border-white/20 px-6 py-5 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all"
+              }
+            >
+              Say Hello
+            </Button>
+          </Link>
+          <Button className="bg-white/10 border border-white/20 py-5 px-6 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all">
+            Download Resume
           </Button>
-        </Link>
-        <div className="flex space-x-4 mt-4">
+        </div>
+        <div className="flex space-x-3 mt-3">
           <Link
-            className="bg-white/10 border border-white/20 flex justify-center items-center w-10 h-10 rounded-full text-2xl hover:bg-red-400 transition-all"
+            className="bg-white/10 border border-white/20 flex justify-center items-center w-8 h-8 rounded-full text-xl hover:bg-red-400 transition-all"
             href={"https://github.com/salmansahed"}
           >
             <FaGithub />
           </Link>
           <Link
-            className="bg-white/10 border border-white/20 flex justify-center items-center w-10 h-10 rounded-full text-2xl hover:bg-blue-400 transition-all"
+            className="bg-white/10 border border-white/20 flex justify-center items-center w-8 h-8 rounded-full text-xl hover:bg-blue-400 transition-all"
             href={"https://www.linkedin.com/in/salman-sahed/"}
           >
             <FaLinkedin />
           </Link>
           <Link
-            className="bg-white/10 border border-white/20 flex justify-center items-center w-10 h-10 rounded-full text-2xl hover:bg-blue-400 transition-all"
+            className="bg-white/10 border border-white/20 flex justify-center items-center w-8 h-8 rounded-full text-xl hover:bg-blue-400 transition-all"
             href={"https://www.facebook.com/salmansahedbd"}
           >
             <FaFacebook />

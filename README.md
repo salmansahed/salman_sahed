@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 Salman Sahed - Personal Portfolio
 
-## Getting Started
+Welcome to the repository of my personal portfolio website. This site showcases my journey as a **Full-Stack Developer**, my technical skills, completed projects, and how to reach out to me.
 
-First, run the development server:
+✨ **Live Demo:** [salman-sahed.vercel.app](https://salman-sahed.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 👨‍💻 About Me
+I am **Salman Sahed**, a passionate Web Developer specializing in the **MERN Stack** and **Next.js**. I focus on building scalable, high-performance web applications with clean UI/UX designs. Transitioning from WordPress to modern JavaScript frameworks, I enjoy solving complex problems and turning ideas into digital reality.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack & Skills
 
-## Learn More
+### **Frontend**
+- **Frameworks:** Next.js (App Router), React.js
+- **Styling:** Tailwind CSS (v4), HeroUI, DaisyUI, CSS3
+- **Languages:** JavaScript (ES6+), HTML5
 
-To learn more about Next.js, take a look at the following resources:
+### **Backend & Database**
+- **Runtime:** Node.js
+- **Framework:** Express.js
+- **Database:** MongoDB (with Atlas)
+- **Authentication:** Better-Auth, JWT
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Tools & Deployment**
+- **Version Control:** Git & GitHub
+- **Deployment:** Vercel, Netlify
+- **Dev Tools:** VS Code, Thunder Client, Docker
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🌟 Key Projects Featured
+Here are some of the projects showcased in this portfolio:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **BookVerse** - A modern Library Management System built with Next.js, Better-Auth, and MongoDB.
+2. **KeenKeeper** - High-performance dashboard for friend list management.
+3. **DigiTools** - A sleek landing page for digital tools.
+4. **Emergency Service Directory** - A responsive app for Bangladesh's essential services.
+5. **Payooo Mobile Bank** - A responsive mobile banking UI.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📧 Get in Touch
+
+
+* **Email:** [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:salmansahedbd@gmail.com) [salmansahedbd@gmail.com](mailto:salmansahedbd@gmail.com)
+* **LinkedIn:** [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/salman-sahed) [linkedin.com/in/salman-sahed](https://linkedin.com/in/salman-sahed)
+* **WhatsApp:** [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/8801614869602) [+8801614869602](https://wa.me/8801614869602)
+* **GitHub:** [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/salmansahed) [@salmansahed](https://github.com/salmansahed)

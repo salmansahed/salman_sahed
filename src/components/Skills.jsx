@@ -77,7 +77,7 @@ const Skills = () => {
                   JavaScript
                 </h4>
                 <span className="text-sm font-medium text-gray-300">
-                  Intermediate
+                  Expert
                 </span>
               </div>
             </div>
