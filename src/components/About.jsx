@@ -4,6 +4,7 @@ import { FaBriefcase } from "react-icons/fa";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 import { MdOutlineSupportAgent } from "react-icons/md";
 import aboutImg from "../assets/images/salman_sahed_carton.png";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -58,9 +59,14 @@ const About = () => {
               I believe in constant learning and enjoy sharing knowledge with
               the developer community.
             </p>
-            <Button className="bg-white/10 border border-white/20 py-6 px-6 text-base rounded-lg shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-              Download Resume
-            </Button>
+            <Link
+              href="/resume/Salman_Sahed_Resume.pdf"
+              download="Salman_Sahed_Resume.pdf"
+            >
+              <Button className="bg-white/10 border border-white/20 py-6 px-6 text-base rounded-lg shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
+                Download Resume
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

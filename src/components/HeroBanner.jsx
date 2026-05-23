@@ -52,9 +52,14 @@ const HeroBanner = () => {
               Say Hello
             </Button>
           </Link>
-          <Button className="bg-white/10 border border-white/20 py-5 px-6 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all">
-            Download Resume
-          </Button>
+          <Link
+            href="/resume/Salman_Sahed_Resume.pdf"
+            download="Salman_Sahed_Resume.pdf"
+          >
+            <Button className="bg-white/10 border border-white/20 py-5 px-6 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all">
+              Download Resume
+            </Button>
+          </Link>
         </div>
         <div className="flex space-x-3 mt-3">
           <Link
