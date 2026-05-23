@@ -4,7 +4,6 @@ import {
   HiOutlineTerminal,
 } from "react-icons/hi";
 import { MdOutlineGridView, MdOutlineDraw, MdOutlineDns } from "react-icons/md";
-import { FaArrowRight } from "react-icons/fa";
 import ServicesModal from "./ServicesModal";
 
 const Services = () => {

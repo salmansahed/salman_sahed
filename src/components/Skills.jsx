@@ -122,7 +122,7 @@ const Skills = () => {
                   JWT
                 </h4>
                 <span className="text-sm font-medium text-gray-300">
-                  Intermediate
+                  Expert
                 </span>
               </div>
             </div>
@@ -146,7 +146,7 @@ const Skills = () => {
                   Docker
                 </h4>
                 <span className="text-sm font-medium text-gray-300">
-                  Intermediate
+                  Learning
                 </span>
               </div>
             </div>

@@ -37,7 +37,7 @@ const Contacts = () => {
         <h1 className="text-4xl font-semibold text-gray-100">Get in Touch</h1>
         <p className="text-gray-300 text-lg">Contact Me</p>
       </div>
-      <div className="flex flex-col md:flex-row justify-center gap-10 sm:gap-12" id="contacts">
+      <div className="flex flex-col md:flex-row justify-center gap-10 sm:gap-12">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-10 w-full shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
           <h1 className="text-xl font-semibold mb-4 text-center">
             Send Me A Message
@@ -145,7 +145,7 @@ const Contacts = () => {
               href={"https://www.facebook.com/salmansahedbd"}
               className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-blue-400 transition-all"
             >
-              <FaFacebook className="text-2xl text-gray-200" /> Connect on
+              <FaFacebook className="text-2xl" /> Connect on
               Facebook
             </Link>
           </div>

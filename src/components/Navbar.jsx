@@ -59,7 +59,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <Link
               key={link.href}
-              href={`#${link.href}`}
+              href={`/#${link.href}`}
               onClick={() => setActiveSection(link.href)}
               className={`text-sm rounded-full px-3 py-1 font-medium transition-all duration-300 border ${
                 activeSection === link.href
