@@ -4,7 +4,7 @@ import { Button, Modal } from "@heroui/react";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 
 const ServicesModal = ({ details, description, title }) => {
-  console.log("details =>", details);
+  // console.log("details =>", details);
   return (
     <div>
       <Modal>

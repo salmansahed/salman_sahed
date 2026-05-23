@@ -40,7 +40,7 @@ const ProjectDetailsPage = async ({ params }) => {
       </div>
       <div className="flex flex-col md:flex-row gap-8 justify-between">
         <div className="flex-1 space-y-8">
-          <div className="flex justify-center">
+          <div className="flex justify-center rounded-3xl">
             <Image
               src={image}
               height={600}

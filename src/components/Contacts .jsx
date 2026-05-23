@@ -16,7 +16,7 @@ import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { IoIosCall, IoLogoWhatsapp } from "react-icons/io";
+import { IoIosCall } from "react-icons/io";
 import { FaFacebook, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineLinkedin } from "react-icons/ai";
@@ -24,15 +24,37 @@ import Link from "next/link";
 
 const Contacts = () => {
   const [value, setValue] = useState();
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
+    const contactData = Object.fromEntries(formData.entries());
 
-    toast.success("Message sent successfully! We'll get back to you soon.");
-    e.currentTarget.reset();
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/contact-form`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+      },
+    );
+
+    const data = await res.json();
+    if (data.insertedId) {
+      toast.success("Message sent successfully! We'll get back to you soon.", {
+        position: "top-center",
+      });
+      e.target.reset();
+      setValue("");
+    }
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-3 py-10 sm:py-18 scroll-mt-8" id="contacts">
+    <div
+      className="max-w-6xl mx-auto px-3 py-10 sm:py-18 scroll-mt-8"
+      id="contacts"
+    >
       <div className="text-center mb-14">
         <h1 className="text-4xl font-semibold text-gray-100">Get in Touch</h1>
         <p className="text-gray-300 text-lg">Contact Me</p>
@@ -78,7 +100,7 @@ const Contacts = () => {
                 <TextField>
                   <label className="text-sm">Phone (Optional)</label>
                   <PhoneInput
-                    isRequired
+                    name="phone"
                     placeholder="Enter phone number"
                     value={value}
                     onChange={setValue}
@@ -145,8 +167,7 @@ const Contacts = () => {
               href={"https://www.facebook.com/salmansahedbd"}
               className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-blue-400 transition-all"
             >
-              <FaFacebook className="text-2xl" /> Connect on
-              Facebook
+              <FaFacebook className="text-2xl" /> Connect on Facebook
             </Link>
           </div>
           <div className="mt-8">
@@ -157,7 +178,7 @@ const Contacts = () => {
             <div className="mt-4">
               <Link
                 href={"tel:+8801614869602"}
-                className="flex items-center gap-2 text-gray-200"
+                className="flex items-center gap-2 text-gray-200 hover:text-white/50 transition-all"
               >
                 <IoIosCall className="text-2xl" /> Numbers: +8801614869602
               </Link>
