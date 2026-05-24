@@ -22,10 +22,11 @@ const Footer = () => {
             <FaLinkedin />
           </span>
         </Link>
-        <Link href="https://github.com/salmansahed"></Link>
-        <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-700 hover:text-white hover:border-gray-700 transition-all duration-300 cursor-pointer">
-          <FaGithub />
-        </span>
+        <Link href="https://github.com/salmansahed">
+          <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-700 hover:text-white hover:border-gray-700 transition-all duration-300 cursor-pointer">
+            <FaGithub />
+          </span>
+        </Link>
       </div>
       <div>
         <h1 className="text-center text-sm text-slate-400">

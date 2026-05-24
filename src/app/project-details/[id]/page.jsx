@@ -13,6 +13,82 @@ import {
 } from "react-icons/lu";
 import { PiTargetBold } from "react-icons/pi";
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/projects/${id}`,
+      {
+        cache: "no-store",
+      },
+    );
+    const project = await res.json();
+
+    if (!project) {
+      return {
+        title: "Project Not Found | Salman Sahed",
+      };
+    }
+
+    const shortDescription = project.description
+      ? project.description.slice(0, 160) + "..."
+      : `Explore ${project.title}, a modern web application developed by Salman Sahed.`;
+
+    return {
+      title: `${project.title} | Salman Sahed`,
+      description: shortDescription,
+      keywords: [
+        project.title,
+        `${project.title} project`,
+        `${project.title} source code`,
+        "Salman Sahed",
+        "MERN Stack Developer",
+        "Next.js Developer",
+        "React Developer",
+        "JavaScript Developer",
+        "Full Stack Web Developer",
+        "Portfolio Project",
+        "Salman Sahed Projects",
+        ...(project.techStack || []),
+      ],
+      authors: [{ name: "Salman Sahed" }],
+      creator: "Salman Sahed",
+      openGraph: {
+        title: `${project.title} | Salman Sahed`,
+        description: shortDescription,
+        url: `https://salman-sahed.vercel.app/projects/${id}`,
+        siteName: "Salman Sahed Portfolio",
+        type: "website",
+        locale: "en_US",
+
+        images: [
+          {
+            url: project.image,
+            width: 1200,
+            height: 630,
+            alt: project.title,
+          },
+        ],
+      },
+      alternates: {
+        canonical: `https://salman-sahed.vercel.app/projects/${id}`,
+      },
+
+      robots: {
+        index: true,
+        follow: true,
+      },
+    };
+  } catch (error) {
+    return {
+      title: "Project Details",
+      description:
+        "Explore professional web development projects built by Salman Sahed.",
+    };
+  }
+}
+
 const ProjectDetailsPage = async ({ params }) => {
   const { id } = await params;
   const res = await fetch(
