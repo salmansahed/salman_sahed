@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { MdEmail } from "react-icons/md";
@@ -6,15 +7,22 @@ const Footer = () => {
   return (
     <div className="max-w-6xl mx-auto space-y-5 bg-white/10 backdrop-blur-sm rounded-t-xl py-10 border-t border-white/50">
       <div className="flex items-center justify-center gap-3 text-2xl">
-        <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-sky-500 hover:text-white hover:border-sky-500 transition-all duration-300 cursor-pointer">
-          <MdEmail />
-        </span>
-        <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all duration-300 cursor-pointer">
-          <IoLogoWhatsapp />
-        </span>
-        <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 cursor-pointer">
-          <FaLinkedin />
-        </span>
+        <Link href="mailto:salmansahedbd@gmail.com">
+          <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-sky-500 hover:text-white hover:border-sky-500 transition-all duration-300 cursor-pointer">
+            <MdEmail />
+          </span>
+        </Link>
+        <Link href="https://wa.me/8801614869602">
+          <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-emerald-500 hover:text-white hover:border-emerald-500 transition-all duration-300 cursor-pointer">
+            <IoLogoWhatsapp />
+          </span>
+        </Link>
+        <Link href="https://www.linkedin.com/in/salman-sahed/">
+          <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 cursor-pointer">
+            <FaLinkedin />
+          </span>
+        </Link>
+        <Link href="https://github.com/salmansahed"></Link>
         <span className="border border-slate-300 text-slate-300 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-700 hover:text-white hover:border-gray-700 transition-all duration-300 cursor-pointer">
           <FaGithub />
         </span>

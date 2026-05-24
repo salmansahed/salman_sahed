@@ -152,7 +152,7 @@ const Contacts = () => {
               <FaWhatsapp className="text-2xl" /> Start a WhatsApp chat
             </Link>
             <Link
-              href={"mailto:salmansahedbd@gmail.com"}
+              href={"mailto:salmansahed10@gmail.com"}
               className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-yellow-400 transition-all"
             >
               <MdOutlineEmail className="text-2xl" /> Shoot me an email
