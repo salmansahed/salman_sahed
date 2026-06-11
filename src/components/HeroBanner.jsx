@@ -52,7 +52,7 @@ const HeroBanner = () => {
               Say Hello
             </Button>
           </Link>
-          <Link href="https://drive.google.com/file/d/1_0ud2mU9at8fZbRPFTy6yGOQbSiBj7t2/view">
+          <Link href="https://drive.google.com/file/d/1_0ud2mU9at8fZbRPFTy6yGOQbSiBj7t2/view" target="_blank" >
             <Button className="bg-white/10 border border-white/20 py-5 px-6 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all">
               View Resume
             </Button>
