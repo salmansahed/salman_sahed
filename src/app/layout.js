@@ -17,7 +17,7 @@ export const metadata = {
   },
 
   description:
-    "Salman Sahed is a passionate MERN Stack and Next.js Developer from Bangladesh. Explore modern web applications, responsive UI/UX projects, full-stack development skills, and portfolio projects built with React, Next.js, MongoDB, Express.js, Tailwind CSS, and JavaScript.",
+    "Official portfolio of Salman Sahed, a passionate MERN Stack and Next.js Developer from Bangladesh building modern, responsive, and scalable full-stack web apps.",
 
   keywords: [
     "Salman Sahed",
@@ -35,6 +35,16 @@ export const metadata = {
     "Next.js Portfolio",
     "React Portfolio",
     "Bangladesh Developer",
+    "Salman Sahed - Portfolio",
+    "Salman Sahed Portfolio",
+    "Salman Sahed Portfolio Website",
+    "MERN Stack Developer Bangladesh",
+    "TypeScript Developer",
+    "Redux Toolkit",
+    "Firebase Developer",
+    "REST API Developer",
+    "Responsive Web Design",
+    "Next.js Portfolio Developer",
   ],
 
   authors: [{ name: "Salman Sahed", url: "https://github.com/salmansahed" }],
@@ -50,7 +60,7 @@ export const metadata = {
   openGraph: {
     title: "Salman Sahed | MERN Stack & Next.js Developer",
     description:
-      "Explore the portfolio of Salman Sahed — a passionate MERN Stack & Next.js Developer building modern, responsive, and user-focused web applications.",
+      "Explore the official portfolio of Salman Sahed — a passionate MERN Stack & Next.js Developer building responsive and user-focused web applications.",
     url: "https://salman-sahed.vercel.app",
     siteName: "Salman Sahed Portfolio",
     images: [
@@ -65,22 +75,106 @@ export const metadata = {
     type: "website",
   },
 
+  twitter: {
+    card: "summary_large_image",
+    title: "Salman Sahed | MERN Stack & Next.js Developer",
+    description:
+      "Explore the official portfolio of Salman Sahed — a passionate MERN Stack & Next.js Developer building responsive and user-focused web applications.",
+    images: ["/og-image.png"],
+  },
+
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      maxVideoPreview: -1,
+      maxImagePreview: "large",
+      maxSnippet: -1,
     },
   },
 
   category: "technology",
+
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+
   verification: {
     google: "OroClGEF2K52Ro89_WCqBpmB_fPYCuuWpvpdQUbrtsQ",
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://salman-sahed.vercel.app/#person",
+      name: "Salman Sahed",
+      url: "https://salman-sahed.vercel.app",
+      image: "https://salman-sahed.vercel.app/profile.png",
+      description:
+        "Passionate MERN Stack and Next.js Developer specializing in modern, responsive, and scalable full-stack web applications.",
+      jobTitle: "MERN Stack & Next.js Developer",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "Bangladesh",
+      },
+      knowsAbout: [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "REST API",
+        "Responsive Web Design",
+      ],
+      sameAs: [
+        "https://github.com/salmansahed",
+        "https://www.linkedin.com/in/salman-sahed",
+      ],
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://salman-sahed.vercel.app/#webpage",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://salman-sahed.vercel.app/#website",
+      url: "https://salman-sahed.vercel.app",
+      name: "Salman Sahed Portfolio",
+      description:
+        "Personal portfolio website of Salman Sahed, showcase of MERN & Next.js projects.",
+      inLanguage: "en",
+      publisher: {
+        "@id": "https://salman-sahed.vercel.app/#person",
+      },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://salman-sahed.vercel.app/#webpage",
+      url: "https://salman-sahed.vercel.app",
+      name: "Salman Sahed Portfolio",
+      description:
+        "Portfolio of Salman Sahed, MERN Stack and Next.js Developer showcasing full-stack web development projects and skills.",
+      isPartOf: {
+        "@id": "https://salman-sahed.vercel.app/#website",
+      },
+      about: {
+        "@id": "https://salman-sahed.vercel.app/#person",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -97,6 +191,10 @@ export default function RootLayout({ children }) {
             {children}
             <Footer />
             <ToastContainer />
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
           </main>
         </SmoothScroll>
       </body>

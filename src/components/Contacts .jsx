@@ -61,9 +61,9 @@ const Contacts = () => {
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-10 sm:gap-12">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-10 w-full shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-          <h1 className="text-xl font-semibold mb-4 text-center">
+          <h2 className="text-xl font-semibold mb-4 text-center">
             Send Me A Message
-          </h1>
+          </h2>
           <Form className="w-full" onSubmit={onSubmit}>
             <Fieldset>
               <FieldGroup>
@@ -140,7 +140,7 @@ const Contacts = () => {
           </Form>
         </div>
         <div className="w-full bg-white/10 rounded-3xl border border-white/20 p-10 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-          <h1 className="text-gray-100 text-xl font-semibold">Chat With Me</h1>
+          <h2 className="text-gray-100 text-xl font-semibold">Chat With Me</h2>
           <p className="text-gray-300 font-medium text-sm">
             Let&apos;s discuss your next project or technical needs.
           </p>
@@ -175,7 +175,7 @@ const Contacts = () => {
             </Link>
           </div>
           <div className="mt-8">
-            <h1 className="text-gray-100 text-xl font-semibold">Call Me</h1>
+            <h2 className="text-gray-100 text-xl font-semibold">Call Me</h2>
             <p className="text-gray-300 font-medium text-sm">
               Available for urgent queries or consultations.
             </p>
@@ -189,9 +189,9 @@ const Contacts = () => {
             </div>
           </div>
           <div className="mt-8">
-            <h1 className="text-gray-100 text-xl font-semibold">
+            <h2 className="text-gray-100 text-xl font-semibold">
               Check my projects on GitHub
-            </h1>
+            </h2>
             <div className="mt-4">
               <Link
                 target="_blank"
@@ -203,9 +203,9 @@ const Contacts = () => {
             </div>
           </div>
           <div className="mt-8">
-            <h1 className="text-gray-100 text-xl font-semibold">
+            <h2 className="text-gray-100 text-xl font-semibold">
               Specialized in MERN Stack & Next.js
-            </h1>
+            </h2>
             <p className="text-gray-300 font-medium text-sm">
               Building high-performance web applications and hardware solutions.
             </p>

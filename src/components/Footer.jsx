@@ -29,9 +29,9 @@ const Footer = () => {
         </Link>
       </div>
       <div>
-        <h1 className="text-center text-sm text-slate-400">
+        <h3 className="text-center text-sm text-slate-400">
           © 2026 Copyright: Salman Sahed
-        </h1>
+        </h3>
       </div>
     </div>
   );

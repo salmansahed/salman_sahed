@@ -118,11 +118,11 @@ const ProjectDetailsPage = async ({ params }) => {
         </Button>
       </Link>
       <div className="mb-6 text-center">
-        <h1 className="bg-white/8 border border-white/10 inline-block px-6 py-1 rounded-br-4xl rounded-tl-4xl shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+        <h2 className="bg-white/8 border border-white/10 inline-block px-6 py-1 rounded-br-4xl rounded-tl-4xl shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
           <span className="text-2xl sm:text-3xl md:text-4xl font-bold inline-block py-2 rounded bg-linear-to-l from-blue-400 to-orange-400 text-transparent bg-clip-text">
             {title}
           </span>
-        </h1>
+        </h2>
       </div>
       <div className="flex flex-col md:flex-row gap-8 justify-between">
         <div className="flex-1 space-y-8">
@@ -136,17 +136,17 @@ const ProjectDetailsPage = async ({ params }) => {
             />
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
-            <h1 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <ImFileText className="text-amber-400" />
               Description
-            </h1>
+            </h2>
             <p className="text-gray-300">{description}</p>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
-            <h1 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <FiTarget className="text-purple-400" />
               Challenges
-            </h1>
+            </h2>
             <ul className="text-gray-200 space-y-2">
               {challenges.map((challenge, index) => (
                 <li
@@ -160,10 +160,10 @@ const ProjectDetailsPage = async ({ params }) => {
             </ul>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
-            <h1 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuRocket className="text-purple-400" />
               Future Plans
-            </h1>
+            </h2>
             <ul className="text-gray-200 space-y-2">
               {futurePlans.map((plan, index) => (
                 <li
@@ -179,10 +179,10 @@ const ProjectDetailsPage = async ({ params }) => {
         </div>
         <div className="flex-1 space-y-8">
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
-            <h1 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuCpu className="text-purple-400" />
               Tools & Technologies
-            </h1>
+            </h2>
             <div className="flex flex-wrap gap-4 sm:gap-5 my-8 sm:my-10">
               {techStack.map((tech, index) => (
                 <p
@@ -209,10 +209,10 @@ const ProjectDetailsPage = async ({ params }) => {
             </div>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
-            <h1 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <PiTargetBold className="text-purple-400" />
               Key Features
-            </h1>
+            </h2>
 
             <ul className="text-gray-200 space-y-2">
               {keyFeatures.map((feature, index) => (
@@ -227,10 +227,10 @@ const ProjectDetailsPage = async ({ params }) => {
             </ul>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
-            <h1 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuBookOpenCheck className="text-purple-400" />
               Key Learning
-            </h1>
+            </h2>
 
             <ul className="text-gray-200 space-y-2">
               {keyLearning.map((learn, index) => (
@@ -245,9 +245,9 @@ const ProjectDetailsPage = async ({ params }) => {
             </ul>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
-            <h1 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               Want a similar project?
-            </h1>
+            </h2>
             <p className="text-gray-300">
               Let&apos;s collaborate and build something extraordinary together.
             </p>

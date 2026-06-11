@@ -31,7 +31,7 @@ const WebNextAdminSignup = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-3">
       <div className="bg-white/20 border border-white/30 rounded-3xl py-8 sm:py-10 px-2 sm:px-10 w-full max-w-md flex flex-col items-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300">
-        <h1 className="text-3xl font-bold mb-6 text-yellow-400">Admin Login</h1>
+        <h1 className="text-3xl font-bold mb-6 text-yellow-400">Admin Signup</h1>
         <Form
           onSubmit={onSubmit}
           className="flex min-w-full flex-col gap-4 bg-white/20 border border-white/30 rounded-3xl p-8"

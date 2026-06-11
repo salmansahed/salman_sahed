@@ -30,17 +30,17 @@ const About = () => {
           <div className="flex flex-col sm:flex-row gap-6 items-center justify-center md:justify-start">
             <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
               <FaBriefcase className="text-2xl mt-1" />
-              <h1 className="text-xl font-semibold">Experience</h1>
+              <h2 className="text-xl font-semibold">Experience</h2>
               <p className="text-sm">1+ Years Working</p>
             </div>
             <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
               <IoCheckmarkDoneCircle className="text-2xl mt-1" />
-              <h1 className="text-xl font-semibold">Completed</h1>
+              <h2 className="text-xl font-semibold">Completed</h2>
               <p className="text-sm">10+ Projects</p>
             </div>
             <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
               <MdOutlineSupportAgent className="text-2xl mt-1" />
-              <h1 className="text-xl font-semibold">Support</h1>
+              <h2 className="text-xl font-semibold">Support</h2>
               <p className="text-sm">Online 24/7</p>
             </div>
           </div>
