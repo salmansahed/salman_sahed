@@ -9,7 +9,7 @@ const Skills = () => {
     >
       {/* Title Section */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-100">Skills</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-100">Skills</h2>
         <p className="text-gray-300 mt-2">My Technical Level</p>
       </div>
 

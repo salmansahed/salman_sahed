@@ -15,7 +15,7 @@ const Projects = async () => {
     >
       {/* Section Header */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-gray-100 mb-4">My Projects</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-100 mb-4">My Projects</h2>
         <p className="text-gray-300">Some of my recent works</p>
       </div>
 

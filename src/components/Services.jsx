@@ -98,7 +98,7 @@ const Services = () => {
     <section className="py-14 sm:py-18 px-3 max-w-6xl mx-auto scroll-mt-8" id="services">
       {/* Header Part */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-100">Services</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-100">Services</h2>
         <p className="text-gray-300 text-sm mt-2 uppercase tracking-widest">
           What I offer
         </p>

@@ -50,7 +50,7 @@ const Testimonials = () => {
   return (
     <div className="max-w-6xl mx-auto py-14 md:py-24 px-3" id="testimonials">
       <div className="px-2 mb-10 md:mb-12 text-center space-y-4">
-        <h2 className="text-4xl font-bold text-gray-100">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-100">
           Kind Words from Clients
         </h2>
         <p className="text-gray-300 text-lg">

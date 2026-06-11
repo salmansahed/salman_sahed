@@ -126,6 +126,7 @@ const ProjectDetailsPage = async ({ params }) => {
       </div>
       <div className="flex flex-col md:flex-row gap-8 justify-between">
         <div className="flex-1 space-y-8">
+          {/* Project Image */}
           <div className="flex justify-center rounded-3xl">
             <Image
               src={image}
@@ -135,6 +136,7 @@ const ProjectDetailsPage = async ({ params }) => {
               className="object-cover rounded-3xl border-4 border-white/50 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300"
             />
           </div>
+          {/* Project Description */}
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <ImFileText className="text-amber-400" />
@@ -142,6 +144,7 @@ const ProjectDetailsPage = async ({ params }) => {
             </h2>
             <p className="text-gray-300">{description}</p>
           </div>
+          {/* Challenges */}
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <FiTarget className="text-purple-400" />
@@ -153,12 +156,13 @@ const ProjectDetailsPage = async ({ params }) => {
                   key={index}
                   className="flex items-start gap-2 text-base sm:text-lg"
                 >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
                   {challenge}
                 </li>
               ))}
             </ul>
           </div>
+          {/* Future Plans */}
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuRocket className="text-purple-400" />
@@ -170,7 +174,7 @@ const ProjectDetailsPage = async ({ params }) => {
                   key={index}
                   className="flex items-start gap-2 text-base sm:text-lg"
                 >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
                   {plan}
                 </li>
               ))}
@@ -178,6 +182,7 @@ const ProjectDetailsPage = async ({ params }) => {
           </div>
         </div>
         <div className="flex-1 space-y-8">
+          {/* Tools & Technologies */}
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuCpu className="text-purple-400" />
@@ -208,6 +213,7 @@ const ProjectDetailsPage = async ({ params }) => {
               </Link>
             </div>
           </div>
+          {/* Key Features */}
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <PiTargetBold className="text-purple-400" />
@@ -220,12 +226,13 @@ const ProjectDetailsPage = async ({ params }) => {
                   key={index}
                   className="flex items-start gap-2 text-base sm:text-lg"
                 >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
                   {feature}
                 </li>
               ))}
             </ul>
           </div>
+          {/* Key Learning */}
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuBookOpenCheck className="text-purple-400" />
@@ -238,12 +245,13 @@ const ProjectDetailsPage = async ({ params }) => {
                   key={index}
                   className="flex items-start gap-2 text-base sm:text-lg"
                 >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
                   {learn}
                 </li>
               ))}
             </ul>
           </div>
+            {/* Contact Me */}
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               Want a similar project?

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import heroImg from "../assets/images/salman_sahed_hero_section.png";
 import Image from "next/image";
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaRegEye } from "react-icons/fa";
 
 const HeroBanner = () => {
   return (
@@ -46,15 +46,19 @@ const HeroBanner = () => {
           <Link href={"/#contacts"}>
             <Button
               className={
-                "bg-white/10 border border-white/20 px-6 py-5 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all"
+                "bg-white/10 border border-white/20 px-6 py-5 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all group"
               }
             >
-              Say Hello
+              Say Hello <span className="group-hover:scale-110 transition-all delay-100">👋</span>
             </Button>
           </Link>
-          <Link href="https://drive.google.com/file/d/1_0ud2mU9at8fZbRPFTy6yGOQbSiBj7t2/view" target="_blank" >
-            <Button className="bg-white/10 border border-white/20 py-5 px-6 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all">
-              View Resume
+          <Link
+            href="https://drive.google.com/file/d/1_0ud2mU9at8fZbRPFTy6yGOQbSiBj7t2/view"
+            target="_blank"
+          >
+            <Button className="bg-white/10 border border-white/20 py-5 px-6 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all group">
+              View Resume{" "}
+              <FaRegEye className="group-hover:scale-110 transition-all delay-100 group-hover:text-yellow-400" />
             </Button>
           </Link>
         </div>

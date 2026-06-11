@@ -21,6 +21,7 @@ import { FaFacebook, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { AiOutlineLinkedin } from "react-icons/ai";
 import Link from "next/link";
+import { BsChatRightText } from "react-icons/bs";
 
 const Contacts = () => {
   const [value, setValue] = useState();
@@ -56,8 +57,10 @@ const Contacts = () => {
       id="contacts"
     >
       <div className="text-center mb-14">
-        <h1 className="text-4xl font-semibold text-gray-100">Get in Touch</h1>
-        <p className="text-gray-300 text-lg">Contact Me</p>
+        <h1 className="text-3xl sm:text-4xl font-semibold text-gray-100">
+          Let’s Build Something Together
+        </h1>
+        <p className="text-gray-300 text-lg sm:text-2xl">Contact Me</p>
       </div>
       <div className="flex flex-col md:flex-row justify-center gap-10 sm:gap-12">
         <div className="bg-white/10 border border-white/20 rounded-3xl p-10 w-full shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
@@ -105,6 +108,13 @@ const Contacts = () => {
                     value={value}
                     onChange={setValue}
                     className="bg-white/10 px-2 py-3 rounded-xl border border-white/30"
+                    countrySelectProps={{
+                      style: {
+                        backgroundColor:
+                          "#161b22",
+                        color: "#ffffff",
+                      },
+                    }}
                   />
                 </TextField>
 
@@ -131,9 +141,10 @@ const Contacts = () => {
               <Fieldset.Actions>
                 <Button
                   type="submit"
-                  className="w-full bg-white/10 border border-white/30 text-gray-100 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300"
+                  className="w-full bg-white/10 border border-white/30 text-gray-100 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300 group"
                 >
-                  Send Message
+                  Send Message{" "}
+                  <BsChatRightText className="group-hover:scale-110 transition-all delay-100 group-hover:text-yellow-400" />
                 </Button>
               </Fieldset.Actions>
             </Fieldset>
