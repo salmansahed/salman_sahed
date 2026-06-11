@@ -54,24 +54,27 @@ const HeroBanner = () => {
           </Link>
           <Link href="https://drive.google.com/file/d/1_0ud2mU9at8fZbRPFTy6yGOQbSiBj7t2/view">
             <Button className="bg-white/10 border border-white/20 py-5 px-6 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all">
-              Download Resume
+              View Resume
             </Button>
           </Link>
         </div>
         <div className="flex space-x-3 mt-3">
           <Link
+            target="_blank"
             className="bg-white/10 border border-white/20 flex justify-center items-center w-8 h-8 rounded-full text-xl hover:bg-red-400 transition-all"
             href={"https://github.com/salmansahed"}
           >
             <FaGithub />
           </Link>
           <Link
+            target="_blank"
             className="bg-white/10 border border-white/20 flex justify-center items-center w-8 h-8 rounded-full text-xl hover:bg-blue-400 transition-all"
             href={"https://www.linkedin.com/in/salman-sahed/"}
           >
             <FaLinkedin />
           </Link>
           <Link
+            target="_blank"
             className="bg-white/10 border border-white/20 flex justify-center items-center w-8 h-8 rounded-full text-xl hover:bg-blue-400 transition-all"
             href={"https://www.facebook.com/salmansahedbd"}
           >

@@ -146,24 +146,28 @@ const Contacts = () => {
           </p>
           <div className="space-y-4 mt-6">
             <Link
+              target="_blank"
               href={"https://wa.me/8801614869602"}
               className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-green-400 transition-all"
             >
               <FaWhatsapp className="text-2xl" /> Start a WhatsApp chat
             </Link>
             <Link
+              target="_blank"
               href={"mailto:salmansahed10@gmail.com"}
               className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-yellow-400 transition-all"
             >
               <MdOutlineEmail className="text-2xl" /> Shoot me an email
             </Link>
             <Link
+              target="_blank"
               href={"https://www.linkedin.com/in/salman-sahed/"}
               className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-blue-400 transition-all"
             >
               <AiOutlineLinkedin className="text-2xl" /> Connect on LinkedIn
             </Link>
             <Link
+              target="_blank"
               href={"https://www.facebook.com/salmansahedbd"}
               className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-blue-400 transition-all"
             >
@@ -190,6 +194,7 @@ const Contacts = () => {
             </h1>
             <div className="mt-4">
               <Link
+                target="_blank"
                 href={"https://github.com/salmansahed"}
                 className="inline-block"
               >

@@ -95,8 +95,18 @@ const ProjectDetailsPage = async ({ params }) => {
     `${process.env.NEXT_PUBLIC_SERVER_URL}/projects/${id}`,
   );
   const projectsData = await res.json();
-  const { title, description, image, techStack, githubLink, liveLink } =
-    projectsData;
+  const {
+    title,
+    description,
+    image,
+    techStack,
+    githubLink,
+    liveLink,
+    keyFeatures,
+    challenges,
+    keyLearning,
+    futurePlans,
+  } = projectsData;
   return (
     <div className="pt-28 pb-20 sm:pb-28 px-3 max-w-6xl mx-auto">
       <Link href={"/#projects"}>
@@ -119,7 +129,7 @@ const ProjectDetailsPage = async ({ params }) => {
           <div className="flex justify-center rounded-3xl">
             <Image
               src={image}
-              height={600}
+              height={400}
               width={600}
               alt={title}
               className="object-cover rounded-3xl border-4 border-white/50 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300"
@@ -138,10 +148,15 @@ const ProjectDetailsPage = async ({ params }) => {
               Challenges
             </h1>
             <ul className="text-gray-200 space-y-2">
-              <li className="flex items-start gap-2 text-base sm:text-lg">
-                <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
-                Coming Soon Challenges List...
-              </li>
+              {challenges.map((challenge, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 text-base sm:text-lg"
+                >
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  {challenge}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
@@ -150,10 +165,15 @@ const ProjectDetailsPage = async ({ params }) => {
               Future Plans
             </h1>
             <ul className="text-gray-200 space-y-2">
-              <li className="flex items-start gap-2 text-base sm:text-lg">
-                <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
-                Coming Soon Future Plans List...
-              </li>
+              {futurePlans.map((plan, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 text-base sm:text-lg"
+                >
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  {plan}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -174,13 +194,13 @@ const ProjectDetailsPage = async ({ params }) => {
               ))}
             </div>
             <div className="flex flex-col gap-6">
-              <Link href={liveLink}>
+              <Link target="_blank" href={liveLink}>
                 <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
                   Live Preview{" "}
                   <LuExternalLink className="group-hover:scale-125 transition-all duration-200" />
                 </Button>
               </Link>
-              <Link href={githubLink}>
+              <Link target="_blank" href={githubLink}>
                 <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
                   Source Code{" "}
                   <FiGithub className="group-hover:scale-125 transition-all duration-200" />
@@ -195,10 +215,15 @@ const ProjectDetailsPage = async ({ params }) => {
             </h1>
 
             <ul className="text-gray-200 space-y-2">
-              <li className="flex items-start gap-2 text-base sm:text-lg">
-                <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
-                Coming Soon Key Features List...
-              </li>
+              {keyFeatures.map((feature, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 text-base sm:text-lg"
+                >
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  {feature}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
@@ -208,10 +233,15 @@ const ProjectDetailsPage = async ({ params }) => {
             </h1>
 
             <ul className="text-gray-200 space-y-2">
-              <li className="flex items-start gap-2 text-base sm:text-lg">
-                <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
-                Coming Soon Key Learning List...
-              </li>
+              {keyLearning.map((learn, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 text-base sm:text-lg"
+                >
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-xl" />{" "}
+                  {learn}
+                </li>
+              ))}
             </ul>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">

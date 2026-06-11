@@ -6,6 +6,7 @@ import Image from "next/image";
 const Projects = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/projects`);
   const projectsData = await res.json();
+  console.log("project data all check =>", projectsData);
 
   return (
     <section
