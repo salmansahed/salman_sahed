@@ -34,7 +34,7 @@ const WebNextAdminLogin = () => {
       });
       e.target.reset();
     } else {
-      toast.error("Something went wrong", {
+      toast.error("Something went wrong🙂", {
         position: "top-center",
       });
     }
