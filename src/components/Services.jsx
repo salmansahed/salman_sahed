@@ -11,7 +11,7 @@ const Services = () => {
     {
       id: 1,
       title: "Frontend Development",
-      icon: <MdOutlineGridView className="text-3xl mb-4" />,
+      icon: <MdOutlineGridView className="text-3xl mb-4 group-hover:text-yellow-300 transition-all duration-200" />,
       description:
         "Crafting delightful user interfaces with Tailwind CSS, JavaScript, React, and Next.js. 🌟",
       details: [
@@ -25,7 +25,9 @@ const Services = () => {
     {
       id: 2,
       title: "Backend Development",
-      icon: <HiOutlineCode className="text-3xl mb-4" />,
+      icon: (
+        <HiOutlineCode className="text-3xl mb-4 group-hover:text-yellow-300 transition-all duration-200" />
+      ),
       description:
         "Building robust server-side logic and database structures using Node.js and Express.",
       details: [
@@ -39,7 +41,9 @@ const Services = () => {
     {
       id: 3,
       title: "Full Stack Development",
-      icon: <MdOutlineDraw className="text-3xl mb-4" />,
+      icon: (
+        <MdOutlineDraw className="text-3xl mb-4 group-hover:text-yellow-300 transition-all duration-200" />
+      ),
       description:
         "End-to-end web applications with seamless integration of frontend and backend technologies.",
       details: [
@@ -53,7 +57,9 @@ const Services = () => {
     {
       id: 4,
       title: "API Development",
-      icon: <MdOutlineDns className="text-3xl mb-4" />,
+      icon: (
+        <MdOutlineDns className="text-3xl mb-4 group-hover:text-yellow-300 transition-all duration-200" />
+      ),
       description:
         "Designing secure and high-performance RESTful APIs for modern web applications.",
       details: [
@@ -67,7 +73,9 @@ const Services = () => {
     {
       id: 5,
       title: "Prototype Development",
-      icon: <HiOutlineTerminal className="text-3xl mb-4" />,
+      icon: (
+        <HiOutlineTerminal className="text-3xl mb-4 group-hover:text-yellow-300 transition-all duration-200" />
+      ),
       description:
         "Transforming your initial ideas into functional, interactive MVPs quickly.",
       details: [
@@ -81,7 +89,9 @@ const Services = () => {
     {
       id: 6,
       title: "WordPress Development (CMS)",
-      icon: <HiOutlineDeviceMobile className="text-3xl mb-4" />,
+      icon: (
+        <HiOutlineDeviceMobile className="text-3xl mb-4 group-hover:text-yellow-300 transition-all duration-200" />
+      ),
       description:
         "Building custom, user-friendly CMS-based websites tailored to your specific business needs.",
       details: [
@@ -109,7 +119,7 @@ const Services = () => {
         {servicesData.map((service) => (
           <div
             key={service.id}
-            className="border border-white/20 rounded-3xl p-10 flex flex-col justify-end items-start min-h-50 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow bg-white/10 group cursor-pointer"
+            className="border border-white/20 rounded-3xl p-10 flex flex-col justify-end items-start min-h-50 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 bg-white/10 group cursor-pointer group"
           >
             {/* Icon */}
             <div className="text-gray-100">{service.icon}</div>

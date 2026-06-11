@@ -30,18 +30,18 @@ const About = () => {
         </div>
         <div className="w-full space-y-6">
           <div className="flex flex-col sm:flex-row gap-6 items-center justify-center md:justify-start">
-            <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-              <FaBriefcase className="text-2xl mt-1" />
+            <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] group transition-all duration-200">
+              <FaBriefcase className="text-2xl mt-1 group-hover:text-yellow-300 transition-all duration-200" />
               <h2 className="text-xl font-semibold">Experience</h2>
               <p className="text-sm">1+ Years Working</p>
             </div>
-            <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-              <IoCheckmarkDoneCircle className="text-2xl mt-1" />
+            <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] group transition-all duration-200 ">
+              <IoCheckmarkDoneCircle className="text-2xl mt-1 group-hover:text-yellow-300 transition-all duration-200" />
               <h2 className="text-xl font-semibold">Completed</h2>
               <p className="text-sm">10+ Projects</p>
             </div>
-            <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-              <MdOutlineSupportAgent className="text-2xl mt-1" />
+            <div className="bg-white/10 border border-white/20 backdrop-blur-3xl p-4 w-full sm:w-38 rounded-2xl flex flex-col gap-1 items-center justify-center shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] group transition-all duration-200">
+              <MdOutlineSupportAgent className="text-2xl mt-1 group-hover:text-yellow-300 transition-all duration-200" />
               <h2 className="text-xl font-semibold">Support</h2>
               <p className="text-sm">Online 24/7</p>
             </div>
@@ -49,26 +49,24 @@ const About = () => {
           <div className="space-y-6 text-center md:text-left">
             <div className="bg-white/5 p-4 rounded-xl border border-white/10">
               <p>
-                I am a passionate Web Developer currently specializing in the
-                MERN Stack. With a strong foundation in modern UI/UX principles,
-                I focus on building scalable and performant web applications
-                that provide seamless user experiences. My journey involves
-                transitioning from WordPress to advanced JavaScript frameworks
-                like React and Next.js, driven by a commitment to clean code and
-                innovative design. Beyond the screen, I am an electronics
-                enthusiast who loves experimenting with DIY hardware projects.
-                Whether I’m building a custom solar setup or solving complex
-                code logic, I thrive on the challenge of creating things from
-                scratch. I believe in constant learning and enjoy sharing
-                knowledge with the developer community.
+                I’m a MERN Stack & Next.js Developer dedicated to building
+                scalable, high-performance web applications with exceptional
+                UI/UX. I successfully transitioned from WordPress to deep
+                JavaScript frameworks, driven by a commitment to clean code. My
+                passion for engineering extends beyond software into DIY
+                electronics and custom solar setups. I thrive on the challenge
+                of building from scratch whether it&apos;s an intricate codebase
+                or hardware logic and love giving back to the developer
+                community.
               </p>
             </div>
             <Link
               href="https://drive.google.com/file/d/1_0ud2mU9at8fZbRPFTy6yGOQbSiBj7t2/view"
               target="_blank"
             >
-              <Button className="bg-white/10 border border-white/20 py-6 px-6 text-base rounded-lg shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] group">
-                View Resume <FaRegEye className="group-hover:scale-110 transition-all delay-100 group-hover:text-yellow-400" />
+              <Button className="bg-white/10 border border-white/20 py-6 px-6 text-base rounded-lg shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] group transition-all duration-200">
+                View Resume{" "}
+                <FaRegEye className="group-hover:scale-110 transition-all delay-100 group-hover:text-yellow-400" />
               </Button>
             </Link>
           </div>

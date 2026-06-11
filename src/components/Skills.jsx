@@ -16,14 +16,14 @@ const Skills = () => {
       {/* Skills Container */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
         {/* Frontend Developer Card */}
-        <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+        <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group">
           <h3 className="text-center text-2xl font-semibold mb-8 text-gray-100">
             Frontend Developer
           </h3>
 
           <div className="grid grid-cols-2 gap-y-6 gap-x-4">
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   HTML5
@@ -35,7 +35,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   Next.JS
@@ -47,7 +47,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   CSS
@@ -59,7 +59,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   Tailwind Css
@@ -71,7 +71,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   JavaScript
@@ -83,7 +83,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   React.JS
@@ -97,14 +97,14 @@ const Skills = () => {
         </div>
 
         {/* Backend Developer Card */}
-        <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+        <div className="bg-white/10 border border-white/20 rounded-3xl p-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group">
           <h3 className="text-center text-2xl font-semibold mb-8 text-gray-100">
             Backend Developer
           </h3>
 
           <div className="grid grid-cols-2 gap-y-6 gap-x-4">
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   Node.JS
@@ -116,7 +116,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   JWT
@@ -128,7 +128,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   Express.JS
@@ -140,7 +140,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   Docker
@@ -152,7 +152,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   MongoDB
@@ -164,7 +164,7 @@ const Skills = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <HiBadgeCheck className="text-gray-100 mt-1 text-xl" />
+              <HiBadgeCheck className="text-gray-100 mt-1 text-xl group-hover:text-yellow-300 transition-all duration-200" />
               <div>
                 <h4 className="font-bold text-lg text-gray-100 leading-none">
                   Better Auth

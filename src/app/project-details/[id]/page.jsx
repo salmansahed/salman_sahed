@@ -118,7 +118,7 @@ const ProjectDetailsPage = async ({ params }) => {
         </Button>
       </Link>
       <div className="mb-6 text-center">
-        <h2 className="bg-white/8 border border-white/10 inline-block px-6 py-1 rounded-br-4xl rounded-tl-4xl shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+        <h2 className="bg-white/8 border border-white/10 inline-block px-6 py-1 rounded-br-4xl rounded-tl-4xl shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
           <span className="text-2xl sm:text-3xl md:text-4xl font-bold inline-block py-2 rounded bg-linear-to-l from-blue-400 to-orange-400 text-transparent bg-clip-text">
             {title}
           </span>
@@ -137,7 +137,7 @@ const ProjectDetailsPage = async ({ params }) => {
             />
           </div>
           {/* Project Description */}
-          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <ImFileText className="text-amber-400" />
               Description
@@ -145,36 +145,30 @@ const ProjectDetailsPage = async ({ params }) => {
             <p className="text-gray-300">{description}</p>
           </div>
           {/* Challenges */}
-          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <FiTarget className="text-purple-400" />
               Challenges
             </h2>
             <ul className="text-gray-200 space-y-2">
               {challenges.map((challenge, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-base sm:text-lg"
-                >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
+                <li key={index} className="flex items-start gap-2 text-sm sm:text-base">
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-400 transition-all duration-200" />{" "}
                   {challenge}
                 </li>
               ))}
             </ul>
           </div>
           {/* Future Plans */}
-          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuRocket className="text-purple-400" />
               Future Plans
             </h2>
             <ul className="text-gray-200 space-y-2">
               {futurePlans.map((plan, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-base sm:text-lg"
-                >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
+                <li key={index} className="flex items-start gap-2 text-sm sm:text-base">
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-400 transition-all duration-200" />{" "}
                   {plan}
                 </li>
               ))}
@@ -183,7 +177,7 @@ const ProjectDetailsPage = async ({ params }) => {
         </div>
         <div className="flex-1 space-y-8">
           {/* Tools & Technologies */}
-          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuCpu className="text-purple-400" />
               Tools & Technologies
@@ -192,7 +186,7 @@ const ProjectDetailsPage = async ({ params }) => {
               {techStack.map((tech, index) => (
                 <p
                   key={index}
-                  className="bg-white/10 px-3 py-1 rounded-lg border border-white/50 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow text-sm sm:text-base"
+                  className="bg-white/10 px-3 py-1 rounded-lg border border-white/50 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 text-sm sm:text-base"
                 >
                   {tech}
                 </p>
@@ -200,13 +194,13 @@ const ProjectDetailsPage = async ({ params }) => {
             </div>
             <div className="flex flex-col gap-6">
               <Link target="_blank" href={liveLink}>
-                <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+                <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
                   Live Preview{" "}
                   <LuExternalLink className="group-hover:scale-125 transition-all duration-200" />
                 </Button>
               </Link>
               <Link target="_blank" href={githubLink}>
-                <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+                <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
                   Source Code{" "}
                   <FiGithub className="group-hover:scale-125 transition-all duration-200" />
                 </Button>
@@ -214,7 +208,7 @@ const ProjectDetailsPage = async ({ params }) => {
             </div>
           </div>
           {/* Key Features */}
-          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <PiTargetBold className="text-purple-400" />
               Key Features
@@ -224,16 +218,16 @@ const ProjectDetailsPage = async ({ params }) => {
               {keyFeatures.map((feature, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-2 text-base sm:text-lg"
+                  className="flex items-start gap-2 text-sm sm:text-base"
                 >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-400 transition-all duration-200" />{" "}
                   {feature}
                 </li>
               ))}
             </ul>
           </div>
           {/* Key Learning */}
-          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               <LuBookOpenCheck className="text-purple-400" />
               Key Learning
@@ -243,16 +237,16 @@ const ProjectDetailsPage = async ({ params }) => {
               {keyLearning.map((learn, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-2 text-base sm:text-lg"
+                  className="flex items-start gap-2 text-sm sm:text-base"
                 >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl" />{" "}
+                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-400 transition-all duration-200" />{" "}
                   {learn}
                 </li>
               ))}
             </ul>
           </div>
-            {/* Contact Me */}
-          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+          {/* Contact Me */}
+          <div className="bg-white/10 border border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
             <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-100">
               Want a similar project?
             </h2>
@@ -260,7 +254,7 @@ const ProjectDetailsPage = async ({ params }) => {
               Let&apos;s collaborate and build something extraordinary together.
             </p>
             <Link href={"/#contacts"}>
-              <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-shadow">
+              <Button className="w-full rounded-lg bg-white/10 border border-white/20 text-gray-100 group shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
                 Contact Me
                 <LuMessageSquareShare className="group-hover:scale-125 transition-all duration-200" />
               </Button>
