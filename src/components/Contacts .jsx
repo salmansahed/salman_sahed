@@ -56,6 +56,7 @@ const Contacts = () => {
       className="max-w-6xl mx-auto px-3 py-10 sm:py-18 scroll-mt-8"
       id="contacts"
     >
+      {/* Contact Section */}
       <div className="text-center mb-14">
         <h1 className="text-3xl sm:text-4xl font-semibold text-gray-100">
           Let’s Build Something Together
@@ -110,8 +111,7 @@ const Contacts = () => {
                     className="bg-white/10 px-2 py-3 rounded-xl border border-white/30"
                     countrySelectProps={{
                       style: {
-                        backgroundColor:
-                          "#161b22",
+                        backgroundColor: "#161b22",
                         color: "#ffffff",
                       },
                     }}
@@ -192,7 +192,7 @@ const Contacts = () => {
             </p>
             <div className="mt-4">
               <Link
-                href={"tel:+8801614869602"}
+                href={`tel:${process.env.PHONE_NUMBER}`}
                 className="flex items-center gap-2 text-gray-200 hover:text-white/50 transition-all"
               >
                 <IoIosCall className="text-2xl" /> Numbers: +880161*****02
