@@ -195,7 +195,7 @@ const Contacts = () => {
                 href={"tel:+8801614869602"}
                 className="flex items-center gap-2 text-gray-200 hover:text-white/50 transition-all"
               >
-                <IoIosCall className="text-2xl" /> Numbers: +8801614869602
+                <IoIosCall className="text-2xl" /> Numbers: +880161*****02
               </Link>
             </div>
           </div>
