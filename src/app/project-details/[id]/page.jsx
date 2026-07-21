@@ -1,7 +1,7 @@
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { FiGithub, FiTarget } from "react-icons/fi";
+import { FiGithub } from "react-icons/fi";
 import { ImFileText } from "react-icons/im";
 import { IoMdArrowRoundBack, IoMdCheckmarkCircleOutline } from "react-icons/io";
 import {
@@ -12,6 +12,8 @@ import {
   LuRocket,
 } from "react-icons/lu";
 import { PiTargetBold } from "react-icons/pi";
+import { HiSparkles } from "react-icons/hi2";
+import { MdOutlineTrackChanges } from "react-icons/md";
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
@@ -61,7 +63,6 @@ export async function generateMetadata({ params }) {
         siteName: "Salman Sahed Portfolio",
         type: "website",
         locale: "en_US",
-
         images: [
           {
             url: project.image,
@@ -74,7 +75,6 @@ export async function generateMetadata({ params }) {
       alternates: {
         canonical: `https://salman-sahed.vercel.app/projects/${id}`,
       },
-
       robots: {
         index: true,
         follow: true,
@@ -82,7 +82,7 @@ export async function generateMetadata({ params }) {
     };
   } catch (error) {
     return {
-      title: "Project Details",
+      title: "Project Details | Salman Sahed",
       description:
         "Explore professional web development projects built by Salman Sahed.",
     };
@@ -91,191 +91,251 @@ export async function generateMetadata({ params }) {
 
 const ProjectDetailsPage = async ({ params }) => {
   const { id } = await params;
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/projects/${id}`,
-  );
-  const projectsData = await res.json();
+  let projectsData = null;
+
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/projects/${id}`,
+      { cache: "no-store" },
+    );
+    projectsData = await res.json();
+  } catch (error) {
+    console.error("Failed to fetch project details:", error);
+  }
+
+  if (!projectsData) {
+    return (
+      <div className="pt-36 pb-20 text-center text-slate-800 dark:text-white">
+        <h2 className="text-2xl font-bold mb-4">Project Not Found</h2>
+        <Link href="/#projects">
+          <Button variant="ghost" className="text-blue-500 underline">
+            Back to Projects
+          </Button>
+        </Link>
+      </div>
+    );
+  }
+
   const {
     title,
     description,
     image,
-    techStack,
-    githubLink,
-    liveLink,
-    keyFeatures,
-    challenges,
-    keyLearning,
-    futurePlans,
+    techStack = [],
+    githubLink = "#",
+    liveLink = "#",
+    keyFeatures = [],
+    challenges = [],
+    keyLearning = [],
+    futurePlans = [],
   } = projectsData;
 
   return (
-    <div className="pt-28 pb-20 sm:pb-28 px-3 max-w-6xl mx-auto transition-colors duration-300">
-      {/* Back Button */}
-      <Link href={"/#projects"}>
-        <Button
-          variant="ghost"
-          className="text-gray-800 dark:text-white mb-6 hover:bg-transparent hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 px-0 py-0"
-        >
-          <IoMdArrowRoundBack /> Back To Projects
-        </Button>
-      </Link>
+    <div className="relative pt-28 pb-20 sm:pb-28 px-4 max-w-6xl mx-auto overflow-hidden">
+      {/* 1. Ambient Background Glow Effects */}
+      <div className="absolute top-20 left-1/4 w-100 h-75 bg-linear-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-1/3 right-10 w-87.5 h-87.5 bg-linear-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      {/* Main Title Badge */}
-      <div className="mb-6 text-center">
-        <h2 className="bg-black/5 dark:bg-white/8 border border-black/10 dark:border-white/10 inline-block px-6 py-1 rounded-br-4xl rounded-tl-4xl shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200">
-          <span className="text-2xl sm:text-3xl md:text-4xl font-bold inline-block py-2 rounded bg-linear-to-l from-blue-600 to-orange-500 dark:from-blue-400 dark:to-orange-400 text-transparent bg-clip-text">
-            {title}
-          </span>
-        </h2>
+      {/* 2. Back Button (Pill Glass Style) */}
+      <div className="mb-8">
+        <Link href="/#projects">
+          <Button
+            variant="ghost"
+            className="group flex items-center gap-2 rounded-full px-5 py-2 text-sm font-semibold text-slate-800 dark:text-slate-200 bg-white/30 dark:bg-white/4 border border-black/5 dark:border-white/10 backdrop-blur-xl hover:bg-linear-to-r hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent transition-all duration-300 shadow-md shadow-black/5"
+          >
+            <IoMdArrowRoundBack className="text-lg group-hover:-translate-x-1 transition-transform" />
+            <span>Back To Projects</span>
+          </Button>
+        </Link>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-8 justify-between">
+      {/* 3. Main Title & Badge */}
+      <div className="mb-12 text-center">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold tracking-wider uppercase mb-3 backdrop-blur-md">
+          <HiSparkles className="text-amber-500 animate-pulse" />
+          <span>Case Study</span>
+        </div>
+        <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">
+            {title}
+          </span>
+        </h1>
+      </div>
+
+      {/* 4. Grid Container */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
         {/* Left Column */}
-        <div className="flex-1 space-y-8">
-          {/* Project Image */}
-          <div className="flex justify-center rounded-3xl">
-            <Image
-              src={image}
-              height={400}
-              width={600}
-              alt={title}
-              className="object-cover rounded-3xl border-4 border-gray-200 dark:border-white/50 shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.15)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300"
-            />
+        <div className="space-y-8">
+          {/* Project Image Card */}
+          <div className="relative group overflow-hidden rounded-3xl bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 p-3 backdrop-blur-xl shadow-xl shadow-black/5 dark:shadow-purple-500/5">
+            <div className="relative overflow-hidden rounded-2xl aspect-video w-full">
+              <Image
+                src={image}
+                fill
+                alt={title}
+                priority
+                className="object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
           </div>
 
-          {/* Project Description */}
-          <div className="bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 backdrop-blur-md">
-            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
-              <ImFileText className="text-amber-500 dark:text-amber-400" />
+          {/* Description */}
+          <div className="rounded-3xl p-6 sm:p-8 bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-purple-500/5 hover:border-blue-500/30 transition-all duration-300">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-3 font-bold text-slate-900 dark:text-white mb-4">
+              <span className="p-2 rounded-xl bg-amber-500/10 text-amber-500 border border-amber-500/20">
+                <ImFileText size={20} />
+              </span>
               Description
             </h2>
-            <p className="text-gray-700 dark:text-gray-300">{description}</p>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+              {description}
+            </p>
           </div>
 
           {/* Challenges */}
-          <div className="bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group backdrop-blur-md">
-            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
-              <FiTarget className="text-purple-600 dark:text-purple-400" />
-              Challenges
-            </h2>
-            <ul className="text-gray-800 dark:text-gray-200 space-y-2">
-              {challenges.map((challenge, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-sm sm:text-base"
-                >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-500 dark:text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-500 dark:group-hover:text-red-400 transition-all duration-200" />{" "}
-                  {challenge}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {challenges.length > 0 && (
+            <div className="rounded-3xl p-6 sm:p-8 bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-purple-500/5 hover:border-blue-500/30 transition-all duration-300">
+              <h2 className="text-xl sm:text-2xl flex items-center gap-3 font-bold text-slate-900 dark:text-white mb-5">
+                <span className="p-2 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                  <MdOutlineTrackChanges size={22} />
+                </span>
+                Key Challenges
+              </h2>
+              <ul className="space-y-3">
+                {challenges.map((challenge, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-slate-700 dark:text-slate-300 text-sm sm:text-base"
+                  >
+                    <IoMdCheckmarkCircleOutline className="mt-1 text-pink-500 shrink-0 text-xl" />
+                    <span>{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Future Plans */}
-          <div className="bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group backdrop-blur-md">
-            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
-              <LuRocket className="text-purple-600 dark:text-purple-400" />
-              Future Plans
-            </h2>
-            <ul className="text-gray-800 dark:text-gray-200 space-y-2">
-              {futurePlans.map((plan, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-sm sm:text-base"
-                >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-500 dark:text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-500 dark:group-hover:text-red-400 transition-all duration-200" />{" "}
-                  {plan}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {futurePlans.length > 0 && (
+            <div className="rounded-3xl p-6 sm:p-8 bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-purple-500/5 hover:border-blue-500/30 transition-all duration-300">
+              <h2 className="text-xl sm:text-2xl flex items-center gap-3 font-bold text-slate-900 dark:text-white mb-5">
+                <span className="p-2 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20">
+                  <LuRocket size={22} />
+                </span>
+                Future Roadmap
+              </h2>
+              <ul className="space-y-3">
+                {futurePlans.map((plan, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-slate-700 dark:text-slate-300 text-sm sm:text-base"
+                  >
+                    <IoMdCheckmarkCircleOutline className="mt-1 text-blue-500 shrink-0 text-xl" />
+                    <span>{plan}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Right Column */}
-        <div className="flex-1 space-y-8">
-          {/* Tools & Technologies */}
-          <div className="bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 backdrop-blur-md">
-            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
-              <LuCpu className="text-purple-600 dark:text-purple-400" />
-              Tools & Technologies
+        <div className="space-y-8">
+          {/* Tools & Tech Stack */}
+          <div className="rounded-3xl p-6 sm:p-8 bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-purple-500/5 hover:border-blue-500/30 transition-all duration-300">
+            <h2 className="text-xl sm:text-2xl flex items-center gap-3 font-bold text-slate-900 dark:text-white mb-6">
+              <span className="p-2 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                <LuCpu size={22} />
+              </span>
+              Tools & Tech Stack
             </h2>
-            <div className="flex flex-wrap gap-4 sm:gap-5 my-8 sm:my-10">
+
+            {/* Badges Grid */}
+            <div className="flex flex-wrap gap-2.5 mb-8">
               {techStack.map((tech, index) => (
-                <p
+                <span
                   key={index}
-                  className="bg-black/5 dark:bg-white/10 px-3 py-1 rounded-lg border border-gray-300 dark:border-white/50 text-gray-800 dark:text-gray-200 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 text-sm sm:text-base font-medium"
+                  className="px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-blue-500/10 dark:bg-white/5 border border-blue-500/20 dark:border-white/10 text-blue-600 dark:text-blue-300 backdrop-blur-md shadow-xs"
                 >
                   {tech}
-                </p>
+                </span>
               ))}
             </div>
 
-            <div className="flex flex-col gap-6">
-              <Link target="_blank" href={liveLink}>
-                <Button className="w-full rounded-lg bg-black/5 dark:bg-white/10 border border-gray-300 dark:border-white/20 text-gray-900 dark:text-gray-100 group shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 font-medium">
-                  Live Preview{" "}
-                  <LuExternalLink className="group-hover:scale-125 transition-all duration-200" />
+            {/* Live Preview & Github Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link target="_blank" href={liveLink} className="flex-1">
+                <Button className="w-full rounded-2xl bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold shadow-lg shadow-blue-500/25 transition-all duration-300 py-3 flex items-center justify-center gap-2">
+                  <span>Live Demo</span>
+                  <LuExternalLink className="text-lg" />
                 </Button>
               </Link>
-              <Link target="_blank" href={githubLink}>
-                <Button className="w-full rounded-lg bg-black/5 dark:bg-white/10 border border-gray-300 dark:border-white/20 text-gray-900 dark:text-gray-100 group shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 font-medium">
-                  Source Code{" "}
-                  <FiGithub className="group-hover:scale-125 transition-all duration-200" />
+              <Link target="_blank" href={githubLink} className="flex-1">
+                <Button className="w-full rounded-2xl bg-slate-100/80 dark:bg-white/10 border border-black/10 dark:border-white/15 text-slate-800 dark:text-white hover:bg-black/10 dark:hover:bg-white/20 font-semibold transition-all duration-300 py-3 flex items-center justify-center gap-2">
+                  <span>Source Code</span>
+                  <FiGithub className="text-lg" />
                 </Button>
               </Link>
             </div>
           </div>
 
           {/* Key Features */}
-          <div className="bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group backdrop-blur-md">
-            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
-              <PiTargetBold className="text-purple-600 dark:text-purple-400" />
-              Key Features
-            </h2>
-            <ul className="text-gray-800 dark:text-gray-200 space-y-2">
-              {keyFeatures.map((feature, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-sm sm:text-base"
-                >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-500 dark:text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-500 dark:group-hover:text-red-400 transition-all duration-200" />{" "}
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {keyFeatures.length > 0 && (
+            <div className="rounded-3xl p-6 sm:p-8 bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-purple-500/5 hover:border-blue-500/30 transition-all duration-300">
+              <h2 className="text-xl sm:text-2xl flex items-center gap-3 font-bold text-slate-900 dark:text-white mb-5">
+                <span className="p-2 rounded-xl bg-pink-500/10 text-pink-500 border border-pink-500/20">
+                  <PiTargetBold size={22} />
+                </span>
+                Key Features
+              </h2>
+              <ul className="space-y-3">
+                {keyFeatures.map((feature, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-slate-700 dark:text-slate-300 text-sm sm:text-base"
+                  >
+                    <IoMdCheckmarkCircleOutline className="mt-1 text-purple-500 shrink-0 text-xl" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Key Learning */}
-          <div className="bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group backdrop-blur-md">
-            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
-              <LuBookOpenCheck className="text-purple-600 dark:text-purple-400" />
-              Key Learning
-            </h2>
-            <ul className="text-gray-800 dark:text-gray-200 space-y-2">
-              {keyLearning.map((learn, index) => (
-                <li
-                  key={index}
-                  className="flex items-start gap-2 text-sm sm:text-base"
-                >
-                  <IoMdCheckmarkCircleOutline className="mt-1 text-orange-500 dark:text-orange-400 text-3xl sm:text-2xl xl:text-xl group-hover:text-red-500 dark:group-hover:text-red-400 transition-all duration-200" />{" "}
-                  {learn}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {keyLearning.length > 0 && (
+            <div className="rounded-3xl p-6 sm:p-8 bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-purple-500/5 hover:border-blue-500/30 transition-all duration-300">
+              <h2 className="text-xl sm:text-2xl flex items-center gap-3 font-bold text-slate-900 dark:text-white mb-5">
+                <span className="p-2 rounded-xl bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                  <LuBookOpenCheck size={22} />
+                </span>
+                Key Learnings
+              </h2>
+              <ul className="space-y-3">
+                {keyLearning.map((learn, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-3 text-slate-700 dark:text-slate-300 text-sm sm:text-base"
+                  >
+                    <IoMdCheckmarkCircleOutline className="mt-1 text-emerald-500 shrink-0 text-xl" />
+                    <span>{learn}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
-          {/* Contact Me */}
-          <div className="bg-white/70 dark:bg-white/10 border border-gray-200 dark:border-white/20 rounded-3xl px-4 sm:px-6 py-6 sm:py-8 space-y-4 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 backdrop-blur-md">
-            <h2 className="text-xl sm:text-2xl flex items-center gap-2 font-semibold text-gray-900 dark:text-gray-100">
+          {/* Contact CTA Card */}
+          <div className="rounded-3xl p-6 sm:p-8 bg-linear-to-br from-blue-600/10 via-purple-600/10 to-pink-600/10 border border-blue-500/20 dark:border-white/15 backdrop-blur-2xl shadow-xl transition-all duration-300 text-center">
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
               Want a similar project?
-            </h2>
-            <p className="text-gray-700 dark:text-gray-300">
+            </h3>
+            <p className="text-slate-600 dark:text-slate-300 text-sm mb-6">
               Let&apos;s collaborate and build something extraordinary together.
             </p>
-            <Link href={"/#contacts"}>
-              <Button className="w-full rounded-lg bg-black/5 dark:bg-white/10 border border-gray-300 dark:border-white/20 text-gray-900 dark:text-gray-100 group shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 font-medium">
-                Contact Me
-                <LuMessageSquareShare className="group-hover:scale-125 transition-all duration-200" />
+            <Link href="/#contacts">
+              <Button className="w-full rounded-2xl bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 text-white font-semibold shadow-lg shadow-purple-500/25 hover:opacity-95 transition-all duration-300 py-3.5 flex items-center justify-center gap-2">
+                <span>Contact Me</span>
+                <LuMessageSquareShare className="text-lg" />
               </Button>
             </Link>
           </div>

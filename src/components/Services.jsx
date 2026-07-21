@@ -1,9 +1,7 @@
-import {
-  HiOutlineCode,
-  HiOutlineDeviceMobile,
-  HiOutlineTerminal,
-} from "react-icons/hi";
+import { HiOutlineCode, HiOutlineTerminal } from "react-icons/hi";
 import { MdOutlineGridView, MdOutlineDraw, MdOutlineDns } from "react-icons/md";
+import { FaWordpress } from "react-icons/fa";
+import { HiSparkles } from "react-icons/hi2";
 import ServicesModal from "./ServicesModal";
 
 const Services = () => {
@@ -11,9 +9,7 @@ const Services = () => {
     {
       id: 1,
       title: "Frontend Development",
-      icon: (
-        <MdOutlineGridView className="text-3xl mb-4 group-hover:text-amber-500 dark:group-hover:text-yellow-300 transition-all duration-200" />
-      ),
+      icon: <MdOutlineGridView />,
       description:
         "Crafting delightful user interfaces with Tailwind CSS, JavaScript, React, and Next.js. 🌟",
       details: [
@@ -27,9 +23,7 @@ const Services = () => {
     {
       id: 2,
       title: "Backend Development",
-      icon: (
-        <HiOutlineCode className="text-3xl mb-4 group-hover:text-amber-500 dark:group-hover:text-yellow-300 transition-all duration-200" />
-      ),
+      icon: <HiOutlineCode />,
       description:
         "Building robust server-side logic and database structures using Node.js and Express.",
       details: [
@@ -43,9 +37,7 @@ const Services = () => {
     {
       id: 3,
       title: "Full Stack Development",
-      icon: (
-        <MdOutlineDraw className="text-3xl mb-4 group-hover:text-amber-500 dark:group-hover:text-yellow-300 transition-all duration-200" />
-      ),
+      icon: <MdOutlineDraw />,
       description:
         "End-to-end web applications with seamless integration of frontend and backend technologies.",
       details: [
@@ -59,9 +51,7 @@ const Services = () => {
     {
       id: 4,
       title: "API Development",
-      icon: (
-        <MdOutlineDns className="text-3xl mb-4 group-hover:text-amber-500 dark:group-hover:text-yellow-300 transition-all duration-200" />
-      ),
+      icon: <MdOutlineDns />,
       description:
         "Designing secure and high-performance RESTful APIs for modern web applications.",
       details: [
@@ -75,9 +65,7 @@ const Services = () => {
     {
       id: 5,
       title: "Prototype Development",
-      icon: (
-        <HiOutlineTerminal className="text-3xl mb-4 group-hover:text-amber-500 dark:group-hover:text-yellow-300 transition-all duration-200" />
-      ),
+      icon: <HiOutlineTerminal />,
       description:
         "Transforming your initial ideas into functional, interactive MVPs quickly.",
       details: [
@@ -90,10 +78,8 @@ const Services = () => {
     },
     {
       id: 6,
-      title: "WordPress Development (CMS)",
-      icon: (
-        <HiOutlineDeviceMobile className="text-3xl mb-4 group-hover:text-amber-500 dark:group-hover:text-yellow-300 transition-all duration-200" />
-      ),
+      title: "WordPress Development",
+      icon: <FaWordpress />,
       description:
         "Building custom, user-friendly CMS-based websites tailored to your specific business needs.",
       details: [
@@ -108,42 +94,62 @@ const Services = () => {
 
   return (
     <section
-      className="py-14 sm:py-18 px-3 max-w-6xl mx-auto scroll-mt-8"
+      className="relative py-16 sm:py-24 px-4 max-w-6xl mx-auto scroll-mt-12 overflow-hidden"
       id="services"
     >
-      {/* Header Part */}
-      <div className="text-center mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 transition-colors">
-          Services
+      {/* 1. Ambient Background Glow Effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-125 h-75 bg-linear-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      {/* 2. Header Section */}
+      <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold tracking-wider uppercase mb-3 backdrop-blur-md">
+          <HiSparkles className="text-amber-500 animate-pulse" />
+          <span>What I Offer</span>
+        </div>
+        <h2 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+          My{" "}
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-purple-600 to-pink-500 dark:from-blue-400 dark:via-purple-400 dark:to-pink-400">
+            Services
+          </span>
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mt-2 uppercase tracking-widest transition-colors">
-          What I offer
+        <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base mt-3 max-w-xl">
+          Comprehensive web development solutions crafted with modern tools,
+          high performance, and pixel-perfect design.
         </p>
       </div>
 
-      {/* Cards Grid */}
+      {/* 3. Modern Cyber Glass Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {servicesData.map((service) => (
           <div
             key={service.id}
-            className="bg-black/5 border border-black/10 dark:bg-white/10 dark:border-white/20 rounded-3xl p-10 flex flex-col justify-end items-start min-h-50 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-200 group cursor-pointer"
+            className="group relative flex flex-col justify-between rounded-3xl p-7 bg-white/40 dark:bg-slate-950/40 border border-black/5 dark:border-white/10 backdrop-blur-xl shadow-lg shadow-black/5 dark:shadow-purple-500/5 hover:-translate-y-2 hover:border-blue-500/40 dark:hover:border-blue-400/40 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
           >
-            {/* Icon */}
-            <div className="text-gray-800 dark:text-gray-100 transition-colors">
-              {service.icon}
+            <div>
+              {/* Glowing Icon Box */}
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl text-blue-600 dark:text-blue-400 bg-blue-500/10 border border-blue-500/20 group-hover:bg-linear-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:text-white group-hover:border-transparent group-hover:shadow-lg group-hover:shadow-blue-500/30 transition-all duration-300 mb-6">
+                {service.icon}
+              </div>
+
+              {/* Service Title */}
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
+                {service.title}
+              </h3>
+
+              {/* Service Description */}
+              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                {service.description}
+              </p>
             </div>
 
-            {/* Title */}
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 leading-snug transition-colors">
-              {service.title}
-            </h3>
-
-            {/* Modal Component */}
-            <ServicesModal
-              details={service.details}
-              description={service.description}
-              title={service.title}
-            />
+            {/* Modal Component Container */}
+            <div className="pt-4 border-t border-black/5 dark:border-white/5">
+              <ServicesModal
+                details={service.details}
+                description={service.description}
+                title={service.title}
+              />
+            </div>
           </div>
         ))}
       </div>
