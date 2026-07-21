@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
 import SmoothScroll from "@/components/SmoothScroll";
+import NextThemeProvider from "@/providers/NextThemeProvider";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -185,18 +186,20 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        <SmoothScroll>
-          <main className="bg-[#040b24] text-white">
-            <Navbar />
-            {children}
-            <Footer />
-            <ToastContainer />
-            <script
-              type="application/ld+json"
-              dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-          </main>
-        </SmoothScroll>
+        <NextThemeProvider>
+          <SmoothScroll>
+            <main className="bg-white dark:custom-dark">
+              <Navbar />
+              {children}
+              <Footer />
+              <ToastContainer />
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+              />
+            </main>
+          </SmoothScroll>
+        </NextThemeProvider>
       </body>
     </html>
   );

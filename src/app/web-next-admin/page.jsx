@@ -116,7 +116,7 @@ const WebNextAdmin = () => {
               <Input
                 value={item}
                 placeholder={`${placeholder} #${index + 1}`}
-                className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors text-sm"
+                className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all text-sm"
               />
               <FieldError className="text-xs text-red-400 mt-1" />
             </TextField>
@@ -126,7 +126,7 @@ const WebNextAdmin = () => {
                 type="button"
                 variant="light"
                 onClick={() => handleRemoveField(index, state, setState)}
-                className="bg-red-950/40 border border-red-900/60 text-red-400 rounded-xl hover:bg-red-900 hover:text-white transition-colors h-11.5"
+                className="bg-red-950/40 border border-red-900/60 text-red-400 rounded-xl hover:bg-red-900 hover:text-white transition-all h-11.5"
               >
                 Delete
               </Button>
@@ -139,7 +139,7 @@ const WebNextAdmin = () => {
         type="button"
         variant="light"
         onClick={() => handleAddField(state, setState)}
-        className="mt-3 text-xs font-medium text-blue-400 hover:text-blue-300 transition-colors p-0 bg-transparent min-w-0 h-auto"
+        className="mt-3 text-xs font-medium text-blue-400 hover:text-blue-300 transition-all p-0 bg-transparent min-w-0 h-auto"
       >
         + Add More Item
       </Button>
@@ -174,7 +174,7 @@ const WebNextAdmin = () => {
                 </Label>
                 <Input
                   placeholder="Enter Project Title"
-                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors text-sm mt-1"
+                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all text-sm mt-1"
                 />
                 <FieldError className="text-xs text-red-400 mt-1" />
               </TextField>
@@ -185,7 +185,7 @@ const WebNextAdmin = () => {
                 </Label>
                 <Input
                   placeholder="Enter Image URL"
-                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors text-sm mt-1"
+                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all text-sm mt-1"
                 />
                 <FieldError className="text-xs text-red-400 mt-1" />
               </TextField>
@@ -198,7 +198,7 @@ const WebNextAdmin = () => {
                 </Label>
                 <Input
                   placeholder="Enter Live Preview URL"
-                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors text-sm mt-1"
+                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all text-sm mt-1"
                 />
                 <FieldError className="text-xs text-red-400 mt-1" />
               </TextField>
@@ -209,7 +209,7 @@ const WebNextAdmin = () => {
                 </Label>
                 <Input
                   placeholder="Enter Source Code URL"
-                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors text-sm mt-1"
+                  className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all text-sm mt-1"
                 />
                 <FieldError className="text-xs text-red-400 mt-1" />
               </TextField>
@@ -221,7 +221,7 @@ const WebNextAdmin = () => {
               </Label>
               <TextArea
                 placeholder="Write a modern and detailed overview of your project..."
-                className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-colors text-sm mt-1 min-h-25 resize-y"
+                className="w-full bg-transparent border border-gray-800 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition-all text-sm mt-1 min-h-25 resize-y"
               />
               <FieldError className="text-xs text-red-400 mt-1" />
             </TextField>

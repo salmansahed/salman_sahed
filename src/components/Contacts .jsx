@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Button,
   Description,
@@ -25,6 +26,7 @@ import { BsChatRightText } from "react-icons/bs";
 
 const Contacts = () => {
   const [value, setValue] = useState();
+
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -56,15 +58,20 @@ const Contacts = () => {
       className="max-w-6xl mx-auto px-3 py-10 sm:py-18 scroll-mt-8"
       id="contacts"
     >
+      {/* Section Header */}
       <div className="text-center mb-14">
-        <h1 className="text-3xl sm:text-4xl font-semibold text-gray-100">
+        <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 dark:text-gray-100 transition-colors">
           Let’s Build Something Together
         </h1>
-        <p className="text-gray-300 text-lg sm:text-2xl">Contact Me</p>
+        <p className="text-gray-600 dark:text-gray-300 text-lg sm:text-2xl transition-colors">
+          Contact Me
+        </p>
       </div>
+
       <div className="flex flex-col md:flex-row justify-center gap-10 sm:gap-12">
-        <div className="bg-white/10 border border-white/20 rounded-3xl p-10 w-full shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-          <h2 className="text-xl font-semibold mb-4 text-center">
+        {/* Contact Form Section */}
+        <div className="bg-black/5 border border-black/10 dark:bg-white/10 dark:border-white/20 rounded-3xl p-10 w-full shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300">
+          <h2 className="text-xl font-semibold mb-4 text-center text-gray-900 dark:text-gray-100 transition-colors">
             Send Me A Message
           </h2>
           <Form className="w-full" onSubmit={onSubmit}>
@@ -81,33 +88,39 @@ const Contacts = () => {
                     return null;
                   }}
                 >
-                  <Label className="text-gray-200">Name</Label>
+                  <Label className="text-gray-700 dark:text-gray-200 transition-colors">
+                    Name
+                  </Label>
                   <Input
                     placeholder="Enter your name"
-                    className="bg-white/10 border border-white/30 text-gray-100"
+                    className="bg-black/5 border border-black/20 text-gray-900 placeholder:text-gray-500 dark:bg-white/10 dark:border-white/30 dark:text-gray-100 dark:placeholder:text-gray-400 transition-colors"
                   />
-                  <FieldError />
+                  <FieldError className="text-red-500" />
                 </TextField>
 
                 {/* Email */}
                 <TextField isRequired name="email" type="email">
-                  <Label className="text-gray-200">Email</Label>
+                  <Label className="text-gray-700 dark:text-gray-200 transition-colors">
+                    Email
+                  </Label>
                   <Input
                     placeholder="Enter your email address"
-                    className="bg-white/10 border border-white/30 text-gray-100"
+                    className="bg-black/5 border border-black/20 text-gray-900 placeholder:text-gray-500 dark:bg-white/10 dark:border-white/30 dark:text-gray-100 dark:placeholder:text-gray-400 transition-colors"
                   />
-                  <FieldError />
+                  <FieldError className="text-red-500" />
                 </TextField>
 
                 {/* Phone */}
                 <TextField>
-                  <label className="text-sm">Phone (Optional)</label>
+                  <label className="text-sm font-medium text-gray-700 dark:text-gray-200 transition-colors">
+                    Phone (Optional)
+                  </label>
                   <PhoneInput
                     name="phone"
                     placeholder="Enter phone number"
                     value={value}
                     onChange={setValue}
-                    className="bg-white/10 px-2 py-3 rounded-xl border border-white/30"
+                    className="bg-black/5 border border-black/20 text-gray-900 dark:bg-white/10 dark:border-white/30 dark:text-gray-100 px-3 py-2.5 rounded-xl transition-colors [&_input]:bg-transparent [&_input]:outline-none"
                     countrySelectProps={{
                       style: {
                         backgroundColor: "#161b22",
@@ -128,78 +141,97 @@ const Contacts = () => {
                     return null;
                   }}
                 >
-                  <Label className="text-gray-200">Message</Label>
+                  <Label className="text-gray-700 dark:text-gray-200 transition-colors">
+                    Message
+                  </Label>
                   <TextArea
                     placeholder="Write your message"
-                    className="bg-white/10 border border-white/30 h-40 text-gray-100"
+                    className="bg-black/5 border border-black/20 text-gray-900 placeholder:text-gray-500 dark:bg-white/10 dark:border-white/30 dark:text-gray-100 dark:placeholder:text-gray-400 h-40 transition-colors"
                   />
-                  <Description>Minimum 20 characters</Description>
-                  <FieldError />
+                  <Description className="text-gray-500 dark:text-gray-400 text-xs">
+                    Minimum 20 characters
+                  </Description>
+                  <FieldError className="text-red-500" />
                 </TextField>
               </FieldGroup>
-              <Fieldset.Actions>
+
+              <Fieldset.Actions className="mt-4">
                 <Button
                   type="submit"
-                  className="w-full bg-white/10 border border-white/30 text-gray-100 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300 group"
+                  className="w-full cursor-pointer bg-black/5 border border-black/20 text-gray-900 hover:bg-black/10 dark:bg-white/10 dark:border-white/30 dark:text-gray-100 shadow-sm dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300 group flex items-center justify-center gap-2"
                 >
-                  Send Message{" "}
-                  <BsChatRightText className="group-hover:scale-110 transition-all delay-100 group-hover:text-yellow-400" />
+                  <span>Send Message</span>
+                  <BsChatRightText className="group-hover:scale-110 transition-all delay-100 group-hover:text-yellow-500 dark:group-hover:text-yellow-400" />
                 </Button>
               </Fieldset.Actions>
             </Fieldset>
           </Form>
         </div>
-        <div className="w-full bg-white/10 rounded-3xl border border-white/20 p-10 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)]">
-          <h2 className="text-gray-100 text-xl font-semibold">Chat With Me</h2>
-          <p className="text-gray-300 font-medium text-sm">
+
+        {/* Direct Contact & Links Section */}
+        <div className="w-full bg-black/5 border border-black/10 dark:bg-white/10 dark:border-white/20 rounded-3xl p-10 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300">
+          <h2 className="text-gray-900 dark:text-gray-100 text-xl font-semibold transition-colors">
+            Chat With Me
+          </h2>
+          <p className="text-gray-600 dark:text-gray-300 font-medium text-sm transition-colors">
             Let&apos;s discuss your next project or technical needs.
           </p>
+
           <div className="space-y-4 mt-6">
             <Link
               target="_blank"
               href={"https://wa.me/8801614869602"}
-              className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-green-400 transition-all"
+              className="flex items-center gap-2 underline underline-offset-4 text-gray-800 dark:text-gray-200 hover:text-green-600 dark:hover:text-green-400 transition-all"
             >
-              <FaWhatsapp className="text-2xl" /> Start a WhatsApp chat
+              <FaWhatsapp className="text-2xl text-green-600 dark:text-green-400" />{" "}
+              Start a WhatsApp chat
             </Link>
             <Link
               target="_blank"
               href={"mailto:salmansahed10@gmail.com"}
-              className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-yellow-400 transition-all"
+              className="flex items-center gap-2 underline underline-offset-4 text-gray-800 dark:text-gray-200 hover:text-yellow-600 dark:hover:text-yellow-400 transition-all"
             >
-              <MdOutlineEmail className="text-2xl" /> Shoot me an email
+              <MdOutlineEmail className="text-2xl text-yellow-600 dark:text-yellow-400" />{" "}
+              Shoot me an email
             </Link>
             <Link
               target="_blank"
               href={"https://www.linkedin.com/in/salman-sahed/"}
-              className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-blue-400 transition-all"
+              className="flex items-center gap-2 underline underline-offset-4 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
             >
-              <AiOutlineLinkedin className="text-2xl" /> Connect on LinkedIn
+              <AiOutlineLinkedin className="text-2xl text-blue-600 dark:text-blue-400" />{" "}
+              Connect on LinkedIn
             </Link>
             <Link
               target="_blank"
               href={"https://www.facebook.com/salmansahedbd"}
-              className="flex items-center gap-2 underline underline-offset-4 text-gray-200 hover:text-blue-400 transition-all"
+              className="flex items-center gap-2 underline underline-offset-4 text-gray-800 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-all"
             >
-              <FaFacebook className="text-2xl" /> Connect on Facebook
+              <FaFacebook className="text-2xl text-blue-600 dark:text-blue-500" />{" "}
+              Connect on Facebook
             </Link>
           </div>
+
           <div className="mt-8">
-            <h2 className="text-gray-100 text-xl font-semibold">Call Me</h2>
-            <p className="text-gray-300 font-medium text-sm">
+            <h2 className="text-gray-900 dark:text-gray-100 text-xl font-semibold transition-colors">
+              Call Me
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 font-medium text-sm transition-colors">
               Available for urgent queries or consultations.
             </p>
             <div className="mt-4">
               <Link
                 href={`tel:${process.env.PHONE_NUMBER}`}
-                className="flex items-center gap-2 text-gray-200 hover:text-white/50 transition-all"
+                className="flex items-center gap-2 text-gray-800 dark:text-gray-200 hover:text-gray-600 dark:hover:text-white/70 transition-all"
               >
-                <IoIosCall className="text-2xl" /> Numbers: +880161*****02
+                <IoIosCall className="text-2xl text-gray-700 dark:text-gray-300" />{" "}
+                Numbers: +880161*****02
               </Link>
             </div>
           </div>
+
           <div className="mt-8">
-            <h2 className="text-gray-100 text-xl font-semibold">
+            <h2 className="text-gray-900 dark:text-gray-100 text-xl font-semibold transition-colors">
               Check my projects on GitHub
             </h2>
             <div className="mt-4">
@@ -208,15 +240,16 @@ const Contacts = () => {
                 href={"https://github.com/salmansahed"}
                 className="inline-block"
               >
-                <FaGithub className="text-3xl hover:text-red-400 transition-all" />
+                <FaGithub className="text-3xl text-gray-800 dark:text-gray-100 hover:text-red-500 dark:hover:text-red-400 transition-all" />
               </Link>
             </div>
           </div>
+
           <div className="mt-8">
-            <h2 className="text-gray-100 text-xl font-semibold">
+            <h2 className="text-gray-900 dark:text-gray-100 text-xl font-semibold transition-colors">
               Specialized in MERN Stack & Next.js
             </h2>
-            <p className="text-gray-300 font-medium text-sm">
+            <p className="text-gray-600 dark:text-gray-300 font-medium text-sm transition-colors">
               Building high-performance web applications and hardware solutions.
             </p>
           </div>

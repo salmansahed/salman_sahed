@@ -8,7 +8,7 @@ const ServicesModal = ({ details, description, title }) => {
   return (
     <div>
       <Modal>
-        <Button className="flex items-center gap-2 text-sm text-gray-300 font-medium group-hover:translate-x-2 transition-transform bg-transparent px-0 py-0">
+        <Button className="flex items-center gap-2 text-sm text-gray-600 font-medium group-hover:translate-x-2 transition-transform bg-transparent px-0 py-0">
           View Details <FaArrowRight className="text-xs" />
         </Button>
         <Modal.Backdrop

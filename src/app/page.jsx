@@ -3,7 +3,6 @@ import Contacts from "@/components/Contacts ";
 import HeroBanner from "@/components/HeroBanner";
 import Projects from "@/components/Projects";
 import Services from "@/components/Services";
-import ServicesModal from "@/components/ServicesModal";
 import Skills from "@/components/Skills";
 import Technologies from "@/components/Technologies";
 import Testimonials from "@/components/Testimonials";

@@ -1,7 +1,6 @@
 "use client";
 
 import { Pagination, A11y, Autoplay } from "swiper/modules";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -49,15 +48,17 @@ const Testimonials = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-14 md:py-24 px-3" id="testimonials">
+      {/* Section Header */}
       <div className="px-2 mb-10 md:mb-12 text-center space-y-4">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-100">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 transition-colors">
           Kind Words from Clients
         </h2>
-        <p className="text-gray-300 text-lg">
+        <p className="text-gray-600 dark:text-gray-300 text-lg transition-colors">
           Feedback from the wonderful people I&apos;ve worked with
         </p>
       </div>
 
+      {/* Swiper Slider Component */}
       <Swiper
         modules={[Pagination, A11y, Autoplay]}
         loop={true}
@@ -69,13 +70,15 @@ const Testimonials = () => {
           1024: { slidesPerView: 2 },
         }}
         pagination={{ clickable: true, dynamicBullets: true }}
+        className="[&_.swiper-pagination-bullet]:bg-gray-400 [&_.swiper-pagination-bullet-active]:bg-green-500"
       >
         {reviews.map((review) => (
           <SwiperSlide key={review.id}>
-            <div className="border p-6 rounded-3xl space-y-5 mt-4 mx-2 mb-10 bg-white/10 border-white/20 shadow-[0_0_10px_1px_rgba(255,255,255,0.3)]">
-              <div className="flex justify-between">
+            <div className="border p-6 rounded-3xl space-y-5 mt-4 mx-2 mb-10 bg-black/5 border-black/10 dark:bg-white/10 dark:border-white/20 shadow-[0_0_10px_1px_rgba(0,0,0,0.05)] hover:shadow-[0_0_10px_5px_rgba(0,0,0,0.1)] dark:shadow-[0_0_10px_1px_rgba(255,255,255,0.3)] dark:hover:shadow-[0_0_10px_5px_rgba(255,255,255,0.3)] transition-all duration-300">
+              {/* Quote & Rating Stars */}
+              <div className="flex justify-between items-center">
                 <div>
-                  <FaQuoteLeft className="text-gray-400 text-3xl" />
+                  <FaQuoteLeft className="text-gray-400 dark:text-gray-500 text-3xl transition-colors" />
                 </div>
                 <div className="flex text-green-500 gap-1.5">
                   <FaStar />
@@ -85,12 +88,17 @@ const Testimonials = () => {
                   <FaStar />
                 </div>
               </div>
-              <p className="italic text-center text-gray-300">
+
+              {/* Review Text */}
+              <p className="italic text-center text-gray-700 dark:text-gray-300 transition-colors">
                 &quot;{review.review}&quot;
               </p>
-              <hr className="border-white/20" />
-              <div className="flex items-center justify-start gap-2">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-gray-100">
+
+              <hr className="border-black/10 dark:border-white/20 transition-colors" />
+
+              {/* Author Info */}
+              <div className="flex items-center justify-start gap-3">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-gray-300 dark:border-gray-100 transition-colors">
                   <Image
                     src={review.avatar}
                     alt={review.name}
@@ -99,8 +107,10 @@ const Testimonials = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-100">{review.name}</h3>
-                  <p className="text-sm font-medium text-zinc-500">
+                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 transition-colors">
+                    {review.name}
+                  </h3>
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400 transition-colors">
                     {review.role}
                   </p>
                 </div>

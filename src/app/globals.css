@@ -27,3 +27,7 @@ html.lenis body {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
+@utility custom-dark {
+  background-color: #040b24;
+}
