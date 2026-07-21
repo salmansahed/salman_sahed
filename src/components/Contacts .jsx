@@ -76,7 +76,7 @@ const Contacts = () => {
       {/* 2. Cyber Section Header */}
       <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/15 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 mb-3">
-          <HiSparkles className="text-amber-500 animate-spin" />
+          <HiSparkles className="text-amber-500" />
           <span>LET&apos;S CONNECT</span>
         </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white">

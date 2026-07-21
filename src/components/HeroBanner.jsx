@@ -45,7 +45,7 @@ const HeroBanner = () => {
               2000,
             ]}
             wrapper="span"
-            cursor={true}
+            cursor={false}
             repeat={Infinity}
           />
         </div>

@@ -1,5 +1,3 @@
-"use client";
-
 import { Button, Modal } from "@heroui/react";
 import { FaArrowRight, FaCheckCircle } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
